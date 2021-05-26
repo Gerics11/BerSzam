@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+            <StackPane style="-fx-background-color: #fdd835;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BérSzám bérszámfejtő" StackPane.alignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button id="buttonUjdolg" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#ujdolgozoOpen" text="Új dolgozó" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button id="buttonSzamol" mnemonicParsing="false" onAction="#calc" text="Számol" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                     <items>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ffff6b;">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Munkanapok:">
+                                             <HBox.margin>
+                                                <Insets bottom="16.0" left="16.0" right="8.0" top="16.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="inputMunkanapok">
+                                             <HBox.margin>
+                                                <Insets bottom="16.0" right="16.0" top="16.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ledolgozott napok:">
+                                             <HBox.margin>
+                                                <Insets bottom="16.0" left="16.0" right="8.0" top="16.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField id="labelNapokInput" fx:id="inputLedolgnapok">
+                                             <HBox.margin>
+                                                <Insets bottom="16.0" right="16.0" top="16.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelNapokInput" alignment="TOP_LEFT" text="Minden mezőt ki kell tölteni!" visible="false">
+                                             <HBox.margin>
+                                                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ffff6b;">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Munkavállaló: ">
+                                             <HBox.margin>
+                                                <Insets top="8.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <ComboBox fx:id="dropdownMunkavallalo" prefWidth="150.0" promptText="Kiválaszt...">
+                                             <HBox.margin>
+                                                <Insets top="6.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nettó bér: " />
+                                          <Text fx:id="textNettober" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levont SZJA: " />
+                                          <Text fx:id="textSzja" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levont TB: " />
+                                          <Text fx:id="textTb" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levont NYJ: " />
+                                          <Text fx:id="textNyj" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fiz. SZHA: " />
+                                          <Text fx:id="textSzha" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fiz. szakképz. hj.: " />
+                                          <Text fx:id="textSzhj" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
+</StackPane>
